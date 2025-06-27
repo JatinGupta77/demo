@@ -1,0 +1,478 @@
+<html>
+<head>
+<title>Spotify - Web player:Music for</title> 
+<link rel="icon" href="spotify.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+*{padding:0px;
+margin:0px;
+}
+body{
+display:flex;
+min-height:100vh;
+width:100vw;
+flex-direction:column;
+overflow:hidden;
+}
+nav{
+height:8vh;
+width:100%;
+background-color:#4b4b4b;
+position:sticky;
+top:0px;
+z-index:1;
+display:flex;
+justify-content:space-between;
+}
+.content{
+width:100vw;
+background-color:green;
+display:flex;
+flex:1;
+position:relative;
+}
+.left{
+width:30vw;
+background-color:#4b4b4b;
+height:100vh;
+}
+.right{
+width:70vw;
+background-color:#4b4b4b;
+height:100vh;
+overflow:auto;
+margin-top:-20px;
+}
+.footer{
+width:100vw;
+background-color:pink;
+height:8vh;
+position:fixed;
+bottom:0;
+}
+.nav-left{
+display:flex;
+width:40vw;
+align-items:center;
+margin-right:50px;
+margin-top:8px;
+}
+.nav-left i{
+font-size:1.6rem;
+margin-left:0.2rem;
+}
+#input{
+height:1.85rem;
+border-top-right-radius:5px;
+border-bottom-right-radius:5px;
+border:2px solid silver;
+border-left:none;
+width:20vw;
+height:40px;
+}
+.search_icon{
+background-color:white;
+border:2px solid silver;
+border-top-left-radius:5px;
+border-bottom-left-radius:5px;
+border-right:none;
+height:36px;
+display:flex;
+align-items:center;
+}
+.search-bar{
+display:flex;
+align-items:start;
+height:40px;
+width:20vw;
+margin-left:20px;
+margin-top:8px;
+}
+.a1{
+margin-left:20px;
+}
+.nav-right{
+display:flex;
+width:60vw;
+align-items:center;
+justify-content:right;
+}
+.premium{
+font-size:20px;
+text-decoration:none;
+color:white;
+}
+.support{
+font-size:20px;
+text-decoration:none;
+margin-left:15px;
+color:white;
+}
+.aa{
+font-size:25px;
+text-decoration:none;
+margin-left:35px;
+color:white;
+}
+.ab{
+font-size:20px;
+text-decoration:none;
+margin-left:35px;
+color:white;
+}
+.ac{
+font-size:20px;
+text-decoration:none;
+margin-left:5px;
+color:white;
+}
+.ad{
+font-size:20px;
+text-decoration:none;
+margin-left:15px;
+color:white;
+}
+.ae{
+font-size:20px;
+margin-left:15px;
+background-color:white;
+color:black;
+border-radius:15px;
+height:25px;
+width:80px;
+text-align:center;
+padding:5px;
+}
+.b1{
+display:flex;
+width:28vw;
+height:100vh;
+background-color:#000;
+padding:10px;
+font-size:2rem;
+color:#fff;
+margin-left:10px;
+border-radius:10px;
+flex-direction:column;
+}
+.c1{
+height:150px;
+width:28vw;
+background-color:#282C35;
+margin-top:20px;
+color:white;
+}
+.c2{
+height:50px;
+width:28vw;
+background-color:#282C35;
+justify-content:space-between;
+display:flex;
+}
+.ca{
+font-size:20px;
+background-color:white;
+color:black;
+border-radius:15px;
+height:25px;
+width:150px;
+text-align:center;
+padding:5px;
+margin:15px;
+margin-top:30px;
+}
+.c3{
+height:150px;
+width:28vw;
+background-color:#282C35;
+margin-top:40px;
+color:white;
+}
+.c4{
+height:250px;
+width:28vw;
+background-color:#282C35;
+margin-top:40px;
+color:white;
+font-size:15px;
+}
+.cb{
+background-color:black;
+color:white;
+border: 2px solid white;
+border-radius:15px;
+height:25px;
+width:150px;
+text-align:center;
+padding:5px;
+margin:15px;
+margin-top:30px;
+}
+.d1{
+height:400px;
+width:1475px;
+background-color:#000;
+border-radius:10px;
+}
+.d2{
+height:50px;
+width:1439px;
+background-color:#282C35;
+justify-content:space-between;
+display:flex;
+margin:15px;
+}
+.d3{
+height:325px;
+width:1439px;
+background-color:grey;
+margin:15px;
+display:flex;
+overflow:hidden;
+overflow-x:scroll;
+}
+.card{
+height:300px;
+width:240px;
+}
+.e1{
+height:375px;
+width:1475px;
+background-color:#000;
+border-radius:10px;
+}
+.e2{
+height:50px;
+width:1439px;
+background-color:#282C35;
+justify-content:space-between;
+display:flex;
+margin:15px;
+}
+.e3{
+height:300px;
+width:1439px;
+background-color:grey;
+margin:15px;
+display:flex;
+overflow:hidden;
+overflow-x:scroll;
+}
+.card1{
+height:300px;
+width:240px;
+}
+.f1{
+height:375px;
+width:1475px;
+background-color:#000;
+border-radius:10px;
+}
+.f2{
+height:50px;
+width:1439px;
+background-color:#282C35;
+justify-content:space-between;
+display:flex;
+margin:15px;
+}
+.f3{
+height:300px;
+width:1439px;
+background-color:grey;
+margin:15px;
+display:flex;
+overflow:hidden;
+overflow-x:scroll;
+}
+.card2{
+height:300px;
+width:240px;
+}
+.foot1{
+margin-top:-77px;
+height:155px;
+width:100vw;
+}
+</style>
+</head>
+<body>
+<nav class="navbar">
+	<div class="nav-left">
+					  <a href=""><i class="fa-brands fa-spotify" style="background-color:black;color:white;
+							"></i></a>
+					  <a href="" class="a1"><i class="fa-solid fa-house"style=";color:white">							</i></a>
+					  <div class="search-bar"><i class="fa-solid fa-magnifying-glass search_icon" ></i>
+					  <input type="text" placeholder="What do you want to play?" id="input">
+					  </div>
+	</div>
+	<div class="nav-right">
+					 <a href="" class="premium">Premium</a>
+					 <a href="" class="support">Support</a>
+					 <a href="" class="support">Download</a>
+					 <a href="" class="aa">|</a>
+					 <a href="" class="ab"><i class="fa-regular fa-circle-down"></i></a>
+					 <a href="" class="ac">Install App</a>
+					 <a href="" class="ad">Sign up</a>
+					 <div class="ae">Log in
+					 </div>
+	</div>
+</nav>
+<div class="content">
+	<div class="left">
+				    <div class="b1">
+								<div class="c2"><p>Your Library</p><i class="fa-solid fa-plus"></i>	
+				    				</div>	    
+				    				<div class="c1"><p style="margin:15px;font-size:25px;"> Create your first playlist</p>
+											   <p style="font-size:15px;margin:15px">Its easy, we'll help 														you</p>
+											   <div class="ca">Create playlist
+											   </div>
+				    				</div>
+								<div class="c3"><p style="margin:15px;font-size:25px;">Let's find out some 													podcast to follow</p>
+											   <p style="font-size:15px;margin:15px">we'll keep you update on 												new episode</p>
+											   <div class="ca">Browse podcasts 
+											   </div>
+				    				</div>
+								<div class="c4"><p style="margin:15px">Legal&nbsp;&nbsp;																&nbsp;Safety&Privacy Center&nbsp;&nbsp;&nbsp;Privacy 													policy</p>
+											  <p style="margin:15px">Cookies&nbsp;&nbsp;																&nbsp;About Ads Center&nbsp;&nbsp;&nbsp;Accessibility 													</p>
+											  <p style="margin:15px">Cookies</p>
+											    <div class="cb"><i class="fa-solid fa-globe"></i>&nbsp;														&nbsp;English
+											   </div>
+				    				</div>
+				    </div>
+					
+	</div>
+	<div class="right">
+					<div class="d1">
+									<div class="d2">
+													<p style="color:white;font-size:35px;margin:15px;">
+														<b>Trending Songs</b></p>
+													<p style="color:white;font-size:25px;margin:15px;">
+														Show more</p>
+									</div>
+									<div class="d3">
+												<div class="card">
+													<img src="hanuman chalisa.jpg" height="225" 															width="240">
+													<p style="color:white;font-size:23px;margin:8px">
+																Shree Hanuman Chalisa</p>
+													<p style="color:white;font-size:20px;margin:8px">
+																Hariharan</p>
+												</div>
+												<div class="card">
+													<img src="hanuman chalisa.jpg" height="225" 															width="240">
+													<p style="color:white;font-size:23px;margin:8px">
+																Shree Hanuman Chalisa</p>
+													<p style="color:white;font-size:20px;margin:8px">
+																Hariharan</p>
+												</div>
+												<div class="card">
+													<img src="hanuman chalisa.jpg" height="225" 															width="240">
+													<p style="color:white;font-size:23px;margin:8px">
+																Shree Hanuman Chalisa</p>
+													<p style="color:white;font-size:20px;margin:8px">
+																Hariharan</p>
+												</div>
+												<div class="card">
+													<img src="hanuman chalisa.jpg" height="225" 															width="240">
+													<p style="color:white;font-size:23px;margin:8px">
+																Shree Hanuman Chalisa</p>
+													<p style="color:white;font-size:20px;margin:8px">
+																Hariharan</p>
+												</div>
+												<div class="card">
+													<img src="hanuman chalisa.jpg" height="225" 															width="240">
+													<p style="color:white;font-size:23px;margin:8px">
+																Shree Hanuman Chalisa</p>
+													<p style="color:white;font-size:20px;margin:8px">
+																Hariharan</p>
+												</div>
+												<div class="card">
+													<img src="hanuman chalisa.jpg" height="225" 															width="240">
+													<p style="color:white;font-size:23px;margin:8px">
+																Shree Hanuman Chalisa</p>
+													<p style="color:white;font-size:20px;margin:8px">
+																Hariharan</p>
+												</div>
+												<div class="card">
+													<img src="hanuman chalisa.jpg" height="225" 															width="240">
+													<p style="color:white;font-size:23px;margin:8px">
+																Shree Hanuman Chalisa</p>
+													<p style="color:white;font-size:20px;margin:8px">
+																Hariharan</p>
+												</div>
+												<div class="card">
+													<img src="hanuman chalisa.jpg" height="225" 															width="240">
+													<p style="color:white;font-size:23px;margin:8px">
+																Shree Hanuman Chalisa</p>
+													<p style="color:white;font-size:20px;margin:8px">
+																Hariharan</p>
+												</div>
+												<div class="card">
+													<img src="hanuman chalisa.jpg" height="225" 															width="240">
+													<p style="color:white;font-size:23px;margin:8px">
+																Shree Hanuman Chalisa</p>
+													<p style="color:white;font-size:20px;margin:8px">
+																Hariharan</p>
+												</div>
+													
+									</div>
+					</div>
+					<div class="e1">
+									<div class="e2">
+													<p style="color:white;font-size:35px;margin:15px;">
+														<b>Popular Artists</b></p>
+													<p style="color:white;font-size:25px;margin:15px;">
+														Show more</p>
+									</div>
+									<div class="e3">
+												<div class="card1">
+													<img src="arijit singh.jpg" height="200" 															width="200" style="border-radius:50%">
+													<p style="color:white;font-size:23px;margin:8px">
+																Arijit Singh</p>
+													<p style="color:white;font-size:20px;margin:8px">
+																Artist</p>
+												</div>
+									</div>
+					</div>
+					<div class="f1">
+									<div class="f2">
+													<p style="color:white;font-size:35px;margin:15px;">
+														<b>Popular Artists</b></p>
+													<p style="color:white;font-size:25px;margin:15px;">
+														Show more</p>
+									</div>
+									<div class="f3">
+												<div class="card2">
+													<img src="arijit singh.jpg" height="200" 															width="200" style="border-radius:50%">
+													<p style="color:white;font-size:23px;margin:8px">
+																Arijit Singh</p>
+													<p style="color:white;font-size:20px;margin:8px">
+																Artist</p>
+												</div>
+									</div>
+					</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+	</div>
+</div>
+<div class="footer">
+				<img src="C:\Users\pc\Downloads\Screenshot 2025-06-26 112402.png" class="foot1">
+</div>
+
+
+
+
+
+
+</body>
+</html>
